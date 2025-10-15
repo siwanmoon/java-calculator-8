@@ -5,12 +5,13 @@ import calculator.common.Constants;
 
 public class SplitBySeparator {
     public static String[] checkChar (String inputString, ArrayList<String> separator) {
-        //커스텀 구분자가 존재할시 //(커스텀 구분자)\n 부분 문자열에서 제거
+        // 커스텀 구분자가 존재할시 //(커스텀 구분자)\n 부분 문자열에서 제거
         if (separator.size() > Constants.DEFAULT_SEPARATOR.size()) {
             int customSeparatorIndex = inputString.lastIndexOf("\n");
             inputString = inputString.substring(customSeparatorIndex + 1);
         }
 
+        // 구분자로 문자열을 나눠줌
         String regex = String.join("|", separator);
         String[] splitResult = inputString.split(regex);
 
