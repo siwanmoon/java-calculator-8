@@ -3,6 +3,7 @@ package calculator.controller;
 import java.util.ArrayList;
 import calculator.model.CheckCustomSeparator;
 import calculator.common.Constants;
+import calculator.model.SplitBySeparator;
 
 public class CalculatorController {
     public static void cpu(String calculatorInput) { //입력받은 문자열을 model과 view로 전송
@@ -14,5 +15,8 @@ public class CalculatorController {
         if(!customSeparator.isEmpty()) {
             Separator.add(customSeparator);
         }
+
+        //입력받은 문자열을 구분자로 나눠줌
+        String[] dividedInput = SplitBySeparator.checkChar(calculatorInput, Separator);
     }
 }
