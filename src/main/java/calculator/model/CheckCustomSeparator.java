@@ -1,6 +1,6 @@
 package calculator.model;
 
-//커스텀 구분자를 확인해 있으면 구분자를, 없으면 기존 구분자인 쉼표를 return
+//커스텀 구분자를 확인해 있으면 구분자를, 없으면 빈칸을 return
 public class CheckCustomSeparator {
     public static String getSeparator(String inputString) {
         if(inputString.startsWith("//") &&
@@ -8,6 +8,6 @@ public class CheckCustomSeparator {
             return inputString.substring(2, inputString.lastIndexOf("\n"));
         }
 
-        return ",";
+        return "";
     }
 }

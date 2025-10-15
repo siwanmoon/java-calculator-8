@@ -13,7 +13,7 @@ public class CalculatorController {
         String customSeparator = CheckCustomSeparator.getSeparator(calculatorInput);
 
         // 새로운 커스텀 구분자가 존재할시 구분자 목록에 추가
-        if(!customSeparator.equals(",") && !customSeparator.equals(":")) {
+        if(!customSeparator.isEmpty()) {
             Separator.add(customSeparator);
         }
     }
