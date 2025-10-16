@@ -7,6 +7,7 @@ import calculator.model.CheckCustomSeparator;
 import calculator.model.IntegrityCheck;
 import calculator.model.SplitBySeparator;
 import calculator.view.InputView;
+import calculator.view.OutputView;
 
 public class CalculatorController {
     public static void cpu() { // 입력받은 문자열을 model과 view로 전송
@@ -31,5 +32,6 @@ public class CalculatorController {
         long addResult = CalculateString.addString(dividedInput);
 
         // 더해진 값을 출력해줌
+        OutputView.printOutput(addResult);
     }
 }
