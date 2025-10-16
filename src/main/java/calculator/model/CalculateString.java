@@ -9,6 +9,11 @@ public class CalculateString {
     public static long addString(String[] inputString) { // 문자열간의 덧셈을 실행하고 long을 넘어가면 예외 발생
         long addResult = 0;
 
+        // 아무것도 입력 안했을시 기본값 0 출력
+        if (inputString.length == 1 && inputString[0].isEmpty()) {
+            return addResult;
+        }
+
         for (String s : inputString) {
             try {
                 long numberToAdd = Long.parseLong(s);
