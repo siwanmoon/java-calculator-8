@@ -15,11 +15,15 @@ public class CalculatorController {
 
         ArrayList<String> Separator = new ArrayList<>(Constants.DEFAULT_SEPARATOR); // 구분자를 ArrayList로 저장
 
-        // 새로운 커스텀 구분자가 존재할시 구분자 목록에 추가
+        /*
+         * 새로운 커스텀 구분자가 존재할시 구분자 목록에 추가
+         * 숫자로만 이뤄져 있으면 경고문 출력
+         */
         String customSeparator = CheckCustomSeparator.getSeparator(calculatorInput);
 
         if (!customSeparator.isEmpty()) {
             Separator.add(customSeparator);
+            IntegrityCheck.checkCustomSeparatorDigit(customSeparator);
         }
 
         // 입력받은 문자열을 구분자로 나눠줌
