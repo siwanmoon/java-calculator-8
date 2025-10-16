@@ -11,8 +11,8 @@ public class SplitBySeparator {
 
         if (separator.size() > Constants.DEFAULT_SEPARATOR.size()) {
             // 커스텀 구분자가 존재할 시 //(커스텀 구분자)\n 부분 문자열에서 제거
-            int customSeparatorIndex = inputString.lastIndexOf("\n");
-            inputString = inputString.substring(customSeparatorIndex + 1);
+            int customSeparatorIndex = inputString.lastIndexOf("\\n");
+            inputString = inputString.substring(customSeparatorIndex + 2);
 
             // 커스텀 구분자가 존재할 시 디폴트 구분자 전처리에 추가해줌
             String safeCustomSeparator = Pattern.quote(separator.getLast());
