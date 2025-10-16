@@ -2,7 +2,6 @@ package calculator.model;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
-
 import calculator.common.Constants;
 
 public class SplitBySeparator {
@@ -16,16 +15,11 @@ public class SplitBySeparator {
             inputString = inputString.substring(customSeparatorIndex + 1);
 
             // 커스텀 구분자가 존재할 시 디폴트 구분자 전처리에 추가해줌
-            String safeCustomSeparator = Pattern.quote(separator.get(separator.size() - 1));
+            String safeCustomSeparator = Pattern.quote(separator.getLast());
             regex = regex + "|" + safeCustomSeparator;
         }
 
         // 구분자로 문자열을 나눠줌
-        String[] splitResult = inputString.split(regex);
-
-        //구분자로 나눠준 후 입력값에 문자열이 남아있는지 확인하고 IllegalArgumentException 출력
-        //@Todo
-
-        return splitResult;
+        return inputString.split(regex);
     }
 }
