@@ -23,7 +23,8 @@ public class CalculatorController {
 
         if (!customSeparator.isEmpty()) {
             Separator.add(customSeparator);
-            IntegrityCheck.checkCustomSeparatorDigit(customSeparator);
+            // 숫자로만 이뤄지면 경고문 출력은 입출력 요구사항에 위배될수도 있기 때문에 주석으로 처리(ㅠㅠ)
+            // IntegrityCheck.checkCustomSeparatorDigit(customSeparator);
         }
 
         // 입력받은 문자열을 구분자로 나눠줌
