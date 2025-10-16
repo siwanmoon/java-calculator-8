@@ -2,6 +2,7 @@ package calculator.controller;
 
 import java.util.ArrayList;
 import calculator.common.Constants;
+import calculator.model.CalculateString;
 import calculator.model.CheckCustomSeparator;
 import calculator.model.IntegrityCheck;
 import calculator.model.SplitBySeparator;
@@ -20,7 +21,10 @@ public class CalculatorController {
         // 입력받은 문자열을 구분자로 나눠줌
         String[] dividedInput = SplitBySeparator.checkChar(calculatorInput, Separator);
 
-        //구분자로 나눠준 후 입력값에 문자열이 남아있는지 확인하고 IllegalArgumentException 출력
+        // 구분자로 나눠준 후 입력값에 문자열이 남아있는지 확인하고 IllegalArgumentException 출력
         IntegrityCheck.checkUnexpectedString(dividedInput);
+
+        // 문자열화 된 숫자들간의 덧셈을 진행해줌
+        long addResult = CalculateString.addString(dividedInput);
     }
 }
