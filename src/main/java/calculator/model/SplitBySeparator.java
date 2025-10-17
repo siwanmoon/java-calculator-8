@@ -1,11 +1,12 @@
 package calculator.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 import calculator.common.Constants;
 
 public class SplitBySeparator {
-    public static String[] checkChar (String inputString, ArrayList<String> separator) {
+    public static ArrayList<String> checkChar (String inputString, ArrayList<String> separator) {
         // 디폴트 구분자로 문자열을 나누기 위해 전처리 해줌
         String regex = String.join("|", Constants.DEFAULT_SEPARATOR);
 
@@ -18,8 +19,10 @@ public class SplitBySeparator {
             regex = regex + "|" + safeCustomSeparator;
         }
 
+        ArrayList<String> dividedResult = new ArrayList<>(Arrays.asList(inputString.split(regex)));
+
         // 구분자로 문자열을 나눠줌
-        return inputString.split(regex);
+        return dividedResult;
     }
 
     // 커스텀 구분자가 선언되었을 시 //(커스텀 구분자)\n 부분 문자열에서 제거
