@@ -10,10 +10,12 @@ import calculator.view.InputView;
 import calculator.view.OutputView;
 
 public class CalculatorController {
-    public static void cpu() { // 입력받은 문자열을 model과 view로 전송
+    // 입력받은 문자열에서 덧셈 작업 수행
+    public static void stringAddCalculator() {
         String calculatorInput = InputView.getInput();
 
-        ArrayList<String> Separator = new ArrayList<>(Constants.DEFAULT_SEPARATOR); // 구분자를 ArrayList로 저장
+        // 기본 구분자 저장
+        ArrayList<String> Separator = new ArrayList<>(Constants.DEFAULT_SEPARATOR);
 
         /*
          * 새로운 커스텀 구분자가 존재할시 구분자 목록에 추가
