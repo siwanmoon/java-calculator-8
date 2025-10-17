@@ -22,7 +22,7 @@ public class SplitBySeparator {
         return inputString.split(regex);
     }
 
-    // 커스텀 구분자가 존재할 시 //(커스텀 구분자)\n 부분 문자열에서 제거
+    // 커스텀 구분자가 선언되었을 시 //(커스텀 구분자)\n 부분 문자열에서 제거
     public static String deleteCustomSeparator (String inputString) {
         int customSeparatorPrefixIndex = inputString.indexOf(Constants.CUSTOM_SEPARATOR_PREFIX);
         int customSeparatorSuffixIndex = inputString.lastIndexOf(Constants.CUSTOM_SEPARATOR_SUFFIX);
