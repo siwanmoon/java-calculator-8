@@ -12,12 +12,12 @@ public class CalculateString {
     public static long addString(ArrayList<String> inputString) {
         long addResult = 0;
 
-        // 아무것도 입력 안했을시 기본값 0 출력
-        if (inputString.size() == 1 && inputString.get(0).isEmpty()) {
-            return addResult;
-        }
-
         for (String numberString : inputString) {
+            // NULL 입력시 0 반환
+            if (numberString.isEmpty()) {
+                continue;
+            }
+
             try {
                 long numberToAdd = Long.parseLong(numberString);
                 addResult = Math.addExact(addResult, numberToAdd);
