@@ -8,7 +8,8 @@ public class CalculateString {
     private static final String LARGE_NUMBER_SUM_EXCEPTION =
             "덧셈의 값이 너무 큽니다. 작은 값을 입력해 주십시오.";
 
-    public static long addString(ArrayList<String> inputString) { // 문자열간의 덧셈을 실행하고 long을 넘어가면 예외 발생
+    // 문자열간의 덧셈을 실행하고 long을 넘어가면 예외 발생
+    public static long addString(ArrayList<String> inputString) {
         long addResult = 0;
 
         // 아무것도 입력 안했을시 기본값 0 출력
@@ -16,13 +17,15 @@ public class CalculateString {
             return addResult;
         }
 
-        for (String s : inputString) {
+        for (String numberString : inputString) {
             try {
-                long numberToAdd = Long.parseLong(s);
+                long numberToAdd = Long.parseLong(numberString);
                 addResult = Math.addExact(addResult, numberToAdd);
-            } catch (NumberFormatException nfe) { // 더해야 할 문자열이 너무 크면 예외 발생
+            } catch (NumberFormatException nfe) {
+                // 더해야 할 문자열이 너무 크면 예외 발생
                 throw new IllegalArgumentException(LARGE_NUMBER_INPUT_EXCEPTION);
-            } catch (ArithmeticException ae) { // 더해진 문자열이 너무 크면 예외 발생
+            } catch (ArithmeticException ae) {
+                // 더해진 문자열이 너무 크면 예외 발생
                 throw new IllegalArgumentException(LARGE_NUMBER_SUM_EXCEPTION);
             }
         }

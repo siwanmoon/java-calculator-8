@@ -1,6 +1,7 @@
 package calculator.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 import calculator.common.Constants;
 import calculator.model.CalculateString;
 import calculator.model.CheckCustomSeparator;
@@ -15,7 +16,7 @@ public class CalculatorController {
         String calculatorInput = InputView.getInput();
 
         // 기본 구분자 저장
-        ArrayList<String> Separator = new ArrayList<>(Constants.DEFAULT_SEPARATOR);
+        ArrayList<String> separator = new ArrayList<>(Constants.DEFAULT_SEPARATOR);
 
         /*
          * 새로운 커스텀 구분자가 존재할시 구분자 목록에 추가
@@ -24,13 +25,11 @@ public class CalculatorController {
         String customSeparator = CheckCustomSeparator.getSeparator(calculatorInput);
 
         if (!customSeparator.isEmpty()) {
-            Separator.add(customSeparator);
-            // 숫자로만 이뤄지면 경고문 출력은 입출력 요구사항에 위배될수도 있기 때문에 주석으로 처리(ㅠㅠ)
-            // IntegrityCheck.checkCustomSeparatorDigit(customSeparator);
+            separator.add(customSeparator);
         }
 
         // 입력받은 문자열을 구분자로 나눠줌
-        ArrayList<String> dividedInput = SplitBySeparator.checkChar(calculatorInput, Separator);
+        ArrayList<String> dividedInput = SplitBySeparator.checkChar(calculatorInput, separator);
 
         // 구분자로 나눠준 후 입력값에 문자열이 남아있는지 확인하고 IllegalArgumentException 출력
         IntegrityCheck.checkUnexpectedString(dividedInput);

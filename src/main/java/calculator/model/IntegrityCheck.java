@@ -16,11 +16,4 @@ public class IntegrityCheck {
             }
         }
     }
-
-    public static void checkCustomSeparatorDigit (String customSeparator) {
-        // 커스텀 구분자가 숫자로만 이뤄져있으면 경고문 출력
-        if (customSeparator.chars().allMatch(Character :: isDigit)) {
-            System.out.println(CUSTOM_SEPARATOR_DIGIT);
-        }
-    }
 }
