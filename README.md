@@ -1,4 +1,7 @@
 # java-calculator-precourse
+
+---
+
 ## 구현할 기능 목록
 
 - [x] 커스텀 구분자 확인
@@ -10,6 +13,8 @@
 - ### 예외처리 (IllegalArgumentException 발생)
 
   - [x] 구분자가 아닌 문자가 입력된 경우
+
+---
 
 ## 전제 조건
 

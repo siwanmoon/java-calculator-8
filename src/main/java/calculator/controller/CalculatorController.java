@@ -1,7 +1,6 @@
 package calculator.controller;
 
 import java.util.ArrayList;
-import java.util.List;
 import calculator.common.Constants;
 import calculator.model.CalculateString;
 import calculator.model.CheckCustomSeparator;
